@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { Project, Status } from './project';
+import { Project } from './project';
+import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-root',
@@ -8,16 +10,13 @@ import { Project, Status } from './project';
 })
 export class AppComponent {
 
-  projects: Project[] = [];
+  projectsCollection: AngularFirestoreCollection<Project>;
+  projects: Observable<Project[]>;
 
-  constructor() {
-    const p = new Project();
-    p.code = 'ff7e';
-    p.desc = 'Roman (non officiel) de FFVII.';
-    p.link = 'http://ff7e.com';
-    p.name = 'Final Fantasy VII: Expérience';
-    p.active = false;
-    this.projects.push(p);
+  constructor(afs: AngularFirestore) {
+
+    this.projectsCollection = afs.collection<Project>('projects');
+    this.projects = this.projectsCollection.valueChanges();
   }
 
   openLink = function (project) {

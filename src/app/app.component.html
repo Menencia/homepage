@@ -12,7 +12,7 @@
     <div class="projects">
       <ul>
         <li
-          *ngFor="let e of projects"
+          *ngFor="let e of projects | async"
           class="project"
           (click)="openLink(e)"
           (mouseenter)="mouseEnter($event)"
