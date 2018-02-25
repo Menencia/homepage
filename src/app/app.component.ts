@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Project } from './project';
-import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
+import { AngularFirestore, AngularFirestoreCollection, QueryFn } from 'angularfire2/firestore';
 import { Observable } from 'rxjs/Observable';
 
 @Component({
@@ -15,21 +15,13 @@ export class AppComponent {
 
   constructor(afs: AngularFirestore) {
 
-    this.projectsCollection = afs.collection<Project>('projects');
+    const options: QueryFn = ref => ref.orderBy('active', 'desc');
+    this.projectsCollection = afs.collection<Project>('projects', options);
     this.projects = this.projectsCollection.valueChanges();
   }
 
   openLink = function (project) {
-    // $window.open(project.link);
-  };
-
-  mouseEnter = function (e) {
-    // var t = $(e.target).closest('.project');
-    // $('.project').not(t).css('opacity', 0.5);
-  };
-
-  mouseLeave = function () {
-    // $('.project').css('opacity', 1);
+    window.open(project.link);
   };
 
 }

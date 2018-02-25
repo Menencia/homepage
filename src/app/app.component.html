@@ -15,8 +15,6 @@
           *ngFor="let e of projects | async"
           class="project"
           (click)="openLink(e)"
-          (mouseenter)="mouseEnter($event)"
-          (mouseleave)="mouseLeave()"
         >
           <span class="status right" [class.active]="e.active">{{ e.active | status }}</span>
           <span class="name">{{ e.name }}</span>&nbsp;
