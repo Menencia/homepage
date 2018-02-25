@@ -15,9 +15,19 @@ export class AppComponent {
 
   constructor(afs: AngularFirestore) {
 
-    const options: QueryFn = ref => ref.orderBy('active', 'desc');
+    const options: QueryFn = ref => ref.orderBy('active', 'desc').orderBy('abandoned', 'asc');
     this.projectsCollection = afs.collection<Project>('projects', options);
     this.projects = this.projectsCollection.valueChanges();
+  }
+
+  getStatus(project) {
+    if (project.active) {
+      return 'ongoing';
+    } else if (!project.abandoned) {
+      return 'onpause';
+    } else {
+      return 'abandoned';
+    }
   }
 
   openLink = function (project) {

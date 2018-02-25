@@ -13,10 +13,10 @@
       <ul>
         <li
           *ngFor="let e of projects | async"
-          class="project"
+           class="project"
           (click)="openLink(e)"
         >
-          <span class="status right" [class.active]="e.active">{{ e.active | status }}</span>
+          <span class="status right {{ getStatus(e) }}">{{ getStatus(e) | status }}</span>
           <span class="name">{{ e.name }}</span>&nbsp;
           <span class="code">#{{ e.code }}</span>
           <br /><span class="desc">{{ e.desc }}</span>
@@ -25,7 +25,7 @@
     </div>
 
     <div class="update">
-    — Mis à jour le <strong>24 février 2018</strong>
+    — Mis à jour le <strong>25 février 2018</strong>
     </div>
   </div>
 

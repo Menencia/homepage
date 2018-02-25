@@ -6,7 +6,14 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class StatusPipe implements PipeTransform {
 
   transform(value: any, args?: any): any {
-    return value ? 'En cours' : 'En pause';
+    switch (value) {
+      case 'ongoing':
+        return 'En cours';
+      case 'onpause':
+        return 'en pause';
+      case 'abandoned':
+        return 'Abandonné';
+    }
   }
 
 }

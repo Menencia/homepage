@@ -1,6 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 
+/*
 @import url(http://fonts.googleapis.com/css?family=Quicksand:300,400,700);
+*/
 
 body {
     font-size: 18px;
@@ -108,19 +110,23 @@ nav a.current:hover::before , nav a.current:hover::after {
 }
 
 .status {
-    font-size: 12px;
-    color: #fff;
-    background-color: #999;
-    border-radius: 5px;
-    padding: 3px;
-    text-transform: uppercase;
+  font-size: 12px;
+  color: #fff;
+  background-color: #999;
+  border-radius: 5px;
+  padding: 3px;
+  text-transform: uppercase;
 }
 
-.active {
-    background-color: #277099;
+.ongoing {
+  background-color: #277099;
+}
+
+.abandoned {
+  background-color: none;
 }
 
 .update {
-    margin-top: 50px;
-    font-size: 10px;
+  margin-top: 50px;
+  font-size: 10px;
 }

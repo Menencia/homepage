@@ -5,5 +5,6 @@ export class Project {
   desc: string; // description
   link: string; // URL
   active: boolean;
+  abandoned: boolean;
 
 }
