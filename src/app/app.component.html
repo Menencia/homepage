@@ -10,9 +10,9 @@
 
   <div class="page">
     <div class="projects">
-      <ul>
+      <ul *ngIf="projects | async as projects$; else loading">
         <li
-          *ngFor="let e of projects | async"
+          *ngFor="let e of projects$"
            class="project"
           (click)="openLink(e)"
         >
@@ -22,6 +22,7 @@
           <br /><span class="desc">{{ e.desc }}</span>
         </li>
       </ul>
+      <ng-template #loading>~loading~</ng-template>
     </div>
 
     <div class="update">
