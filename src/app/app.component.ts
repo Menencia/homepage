@@ -20,14 +20,14 @@ export class AppComponent {
     this.getUpdatedDate();
   }
 
-  loadProject() {
+  loadProject(): void {
     this.afs.collection<Project>('projects')
       .valueChanges().subscribe((projects: Project[]) => {
         this.projects = projects.sort(this.sortProject);
       });
   }
 
-  getUpdatedDate() {
+  getUpdatedDate(): void {
     this.afs.collection<any>('settings')
       .valueChanges().subscribe((settings: any[]) => {
         if (settings.length > 0) {
@@ -36,7 +36,7 @@ export class AppComponent {
       });
   }
 
-  sortProject(a: Project, b: Project) {
+  sortProject(a: Project, b: Project): number {
     const order = [Status.Active, Status.Pause, Status.Abandoned];
     const findIndex = (status: string) => {
       return order.findIndex(e => e === status);
@@ -50,7 +50,7 @@ export class AppComponent {
     return a.name.localeCompare(b.name);
   }
 
-  openLink(project: Project) {
+  openLink(project: Project): void {
     window.open(project.link);
   }
 }
