@@ -1,1 +1,46 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "../node_modules/uikit/dist/css/uikit.min.css";
+
+@import url('https://fonts.googleapis.com/css?family=Averia+Sans+Libre&display=swap');
+
+body {
+    font-family: 'Averia Sans Libre', cursive;
+    color: #444;
+    /* background: url(/assets/bg.jpg) fixed no-repeat bottom right;
+    background-size: 300px; */
+}
+
+h1, .uk-h1, h2, .uk-h2, h3, .uk-h3, h4, .uk-h4, h5, .uk-h5, h6, .uk-h6, .uk-heading-small, .uk-heading-medium, .uk-heading-large, .uk-heading-xlarge, .uk-heading-2xlarge {
+  font-family: 'Averia Sans Libre', cursive;
+}
+
+.uk-logo {
+  font-family: 'Averia Sans Libre', cursive;
+}
+
+h1 em {
+    color: #277099;
+    font-style: normal;
+}
+
+ul li {
+  cursor: pointer;
+}
+
+ul li:hover {
+  background-color: #eee;
+}
+
+.uk-label.active {
+  background-color: #277099;
+}
+
+.uk-label.pause {
+  background-color: #999;
+}
+
+.uk-label.abandoned {
+  background-color: white;
+  color: #444;
+}
