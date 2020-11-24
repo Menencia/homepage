@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "menencia-homepage": {
+      "hosting": {
+        "homepage": [
+          "menencia-homepage"
+        ]
+      }
+    }
+  }
+}
