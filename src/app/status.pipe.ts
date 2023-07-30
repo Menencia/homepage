@@ -6,7 +6,7 @@ import { Status } from './status.enum';
 })
 export class StatusPipe implements PipeTransform {
 
-  transform(value: unknown, ...args: unknown[]): unknown {
+  transform(value: unknown, ...args: unknown[]): string {
     switch (value) {
       case Status.Active:
         return 'Actif';
@@ -15,6 +15,7 @@ export class StatusPipe implements PipeTransform {
       case Status.Abandoned:
         return 'Abandonné';
     }
+    return '';
   }
 
 }

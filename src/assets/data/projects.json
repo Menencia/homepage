@@ -1,0 +1,65 @@
+[
+  {
+    "name": "AFK/lore",
+    "code": "afk-lore",
+    "desc": "Site sur le lore de AFK Arena",
+    "link": "https://afk-lore.menencia.com/",
+    "status": "active"
+  },
+  {
+    "name": "AFK/planner",
+    "code": "afk-planner",
+    "desc": "Outil de gestion et de priorités pour le jeu AFK Arena",
+    "link": "https://afk-planner.menencia.com/#/home",
+    "status": "pause"
+  },
+  {
+    "name": "AFK/tools",
+    "code": "afk-tools",
+    "desc": "Outils pratiques pour le jeu AFK Arena",
+    "link": "https://afk-tools.menencia.com/#/message-sanitizer",
+    "status": "active"
+  },
+  {
+    "name": "Clicking FF7",
+    "code": "clicking-ff7",
+    "desc": "Jeu incrémental, basé sur FFVII, inspiré par Cookie Clicker",
+    "link": "https://clickingff7.menencia.com/#/game",
+    "status": "active"
+  },
+  {
+    "name": "Final Fantasy VII: Expérience",
+    "code": "ff7e",
+    "desc": "Adaptation de FFVII en roman",
+    "link": "https://ff7e.com/#/presentation",
+    "status": "active"
+  },
+  {
+    "name": "Guide FFVIII",
+    "code": "ff8-guide",
+    "desc": "Rédaction d'un guide pour FFVIII",
+    "link": "https://docs.google.com/document/d/1uffPfGqZrb5u-Mvl11oYUfvqACMZTFKCI7keciuy7P0/edit",
+    "status": "pause"
+  },
+  {
+    "name": "FFBE Tools",
+    "code": "ffbe-tools",
+    "desc": "Outils pratiques pour le jeu FF Brave Exvius",
+    "link": "https://ffbe-tools.menencia.com/battle-companion",
+    "status": "pause"
+  },
+  {
+    "name": "FFBE{progress}",
+    "code": "ffbe-progress",
+    "desc": "Gérer sa progression sur FF Brave Exvius",
+    "link": "https://ffbe-progress.menencia.com/home",
+    "status": "pause"
+  },
+  {
+    "name": "Les Archives de Grandshelt",
+    "code": "ffbe-ladg",
+    "desc": "Revoir les scènes de l'histoire de FF Brave Exvius",
+    "link": "https://ffbe-ladg.menencia.com/story",
+    "status": "pause"
+  }
+]

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
 import { Project } from '../project';
 import { Status } from '../status.enum';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-projects',
@@ -10,37 +10,24 @@ import { Status } from '../status.enum';
 })
 export class ProjectsComponent implements OnInit {
 
-  projects: Project[];
-  updated: Date | null;
+  public projects: Project[];
+  public updated = new Date('2023/07/30');
 
-  constructor(public afs: AngularFirestore) {
+  constructor(private http: HttpClient) {
     this.projects = [];
-    this.updated = null;
-
   }
 
-  ngOnInit(): void {
-    this.loadProject();
-    this.getUpdatedDate();
+  public ngOnInit(): void {
+    this.loadProjects();
   }
 
-  loadProject(): void {
-    this.afs.collection<Project>('projects')
-      .valueChanges().subscribe((projects: Project[]) => {
-        this.projects = projects.sort(this.sortProject);
-      });
+  public loadProjects(): void {
+    this.http.get<Project[]>('/assets/data/projects.json').subscribe((projects) => {
+      this.projects = projects.sort(this.sortProject);
+    });
   }
 
-  getUpdatedDate(): void {
-    this.afs.collection<any>('settings')
-      .valueChanges().subscribe((settings: any[]) => {
-        if (settings.length > 0) {
-          this.updated = settings[0].updated.toDate();
-        }
-      });
-  }
-
-  sortProject(a: Project, b: Project): number {
+  public sortProject(a: Project, b: Project): number {
     const order = [Status.Active, Status.Pause, Status.Abandoned];
     const findIndex = (status: string) => {
       return order.findIndex(e => e === status);
@@ -54,7 +41,7 @@ export class ProjectsComponent implements OnInit {
     return a.name.localeCompare(b.name);
   }
 
-  openLink(project: Project): void {
+  public openLink(project: Project): void {
     window.open(project.link);
   }
 

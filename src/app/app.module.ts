@@ -1,10 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { StatusPipe } from './status.pipe';
-import { AngularFireModule } from '@angular/fire';
-import { firebaseConfig } from '../environments/firebase';
 import { ProjectsComponent } from './projects/projects.component';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -16,7 +15,7 @@ import { AppRoutingModule } from './app-routing.module';
   ],
   imports: [
     BrowserModule,
-    AngularFireModule.initializeApp(firebaseConfig),
+    HttpClientModule,
     AppRoutingModule,
   ],
   providers: [],
