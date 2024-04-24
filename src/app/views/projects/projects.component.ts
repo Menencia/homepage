@@ -15,7 +15,7 @@ import { CommonModule, NgFor } from '@angular/common';
 export class ProjectsComponent implements OnInit {
 
   public projects: Project[];
-  public updated = new Date('2023/07/30');
+  public updated = new Date('2024/04/24');
 
   constructor(private http: HttpClient) {
     this.projects = [];
