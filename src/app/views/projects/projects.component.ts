@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { Project } from '../../shared/models/project';
-import { Status } from '../../shared/enums/status.enum';
-import { HttpClient } from '@angular/common/http';
-import { StatusPipe } from 'src/app/shared/pipes/status.pipe';
 import { CommonModule, NgFor } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+import { StatusPipe } from 'src/app/shared/pipes/status.pipe';
+import { Status } from '../../shared/enums/status.enum';
+import { Project } from '../../shared/models/project';
 
 @Component({
   selector: 'app-projects',
@@ -15,7 +15,7 @@ import { CommonModule, NgFor } from '@angular/common';
 export class ProjectsComponent implements OnInit {
 
   public projects: Project[];
-  public updated = new Date('2024/04/24');
+  public updated = new Date('2024/05/07');
 
   constructor(private http: HttpClient) {
     this.projects = [];
