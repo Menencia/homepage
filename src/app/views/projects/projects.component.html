@@ -1,17 +1,22 @@
 <div>
-  <ul *ngIf="projects; else loading" class="uk-list uk-list-divider">
-    <li *ngFor="let project of projects" (click)="openLink(project)">
-      <span class="uk-align-right uk-label" *ngIf="project.status=='active'">
-        {{ project.status | status }}
-      </span>
-      <span class="uk-text-bold">{{ project.name }}</span>
-      <span class="uk-text-small uk-text-muted">#{{ project.code }}</span>
-      <br /><span class="uk-text-small">{{ project.desc }}</span>
-    </li>
-  </ul>
-  <ng-template #loading>
+  @if (projects) {
+    <ul class="uk-list uk-list-divider">
+      @for (project of projects; track project) {
+        <li (click)="openLink(project)">
+          @if (project.status=='active') {
+            <span class="uk-align-right uk-label">
+              {{ project.status | status }}
+            </span>
+          }
+          <span class="uk-text-bold">{{ project.name }}</span>
+          <span class="uk-text-small uk-text-muted">#{{ project.code }}</span>
+          <br /><span class="uk-text-small">{{ project.desc }}</span>
+        </li>
+      }
+    </ul>
+  } @else {
     <div uk-spinner></div>
-  </ng-template>
+  }
 </div>
 
 <hr />

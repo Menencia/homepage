@@ -1,4 +1,4 @@
-import { CommonModule, NgFor } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { StatusPipe } from 'src/app/shared/pipes/status.pipe';
@@ -7,8 +7,7 @@ import { Project } from '../../shared/models/project';
 
 @Component({
   selector: 'app-projects',
-  standalone: true,
-  imports: [CommonModule, StatusPipe, NgFor],
+  imports: [CommonModule, StatusPipe],
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.css']
 })
