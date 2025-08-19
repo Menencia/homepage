@@ -14,7 +14,7 @@ import { Project } from '../../shared/models/project';
 export class ProjectsComponent implements OnInit {
 
   public projects: Project[];
-  public updated = new Date('2024/05/07');
+  public updated = new Date('2025/08/19');
 
   constructor(private http: HttpClient) {
     this.projects = [];

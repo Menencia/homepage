@@ -4,28 +4,28 @@
     "code": "afk-lore",
     "desc": "Site sur le lore de AFK Arena",
     "link": "https://afk-lore.menencia.com/",
-    "status": "pause"
+    "status": "abandoned"
   },
   {
     "name": "AFK/planner",
     "code": "afk-planner",
     "desc": "Outil de gestion et de priorités pour le jeu AFK Arena",
     "link": "https://afk-planner.menencia.com/#/home",
-    "status": "active"
+    "status": "abandoned"
   },
   {
     "name": "AFK/tools",
     "code": "afk-tools",
     "desc": "Outils pratiques pour le jeu AFK Arena",
     "link": "https://afk-tools.menencia.com/#/message-sanitizer",
-    "status": "pause"
+    "status": "abandoned"
   },
   {
     "name": "AFK/collections",
     "code": "afk-collections",
     "desc": "Outils pour gérer efficacement les collections pour le jeu AFK Arena",
     "link": "https://afk-collections.menencia.com/home",
-    "status": "active"
+    "status": "abandoned"
   },
   {
     "name": "Clicking FF7",
