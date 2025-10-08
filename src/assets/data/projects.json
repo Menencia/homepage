@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Clicking FF7",
+    "code": "clicking-ff7",
+    "desc": "Jeu incrémental, basé sur FFVII, inspiré par Cookie Clicker",
+    "link": "https://clickingff7.menencia.com/#/game"
+  },
+  {
+    "name": "Final Fantasy VII: Expérience",
+    "code": "ff7e",
+    "desc": "Présentation du projet de roman FFVII",
+    "link": "https://ff7e.com/#/presentation"
+  },
+  {
+    "name": "FF7e Reader",
+    "code": "ff7e-reader",
+    "desc": "Lecture en ligne de FF7e",
+    "link": "https://ff7e.com/#/presentation"
+  },
+  {
+    "name": "Guide FFVIII",
+    "code": "ff8-guide",
+    "desc": "Rédaction d'un guide pour FFVIII",
+    "link": "https://docs.google.com/document/d/1uffPfGqZrb5u-Mvl11oYUfvqACMZTFKCI7keciuy7P0/edit"
+  },
+  {
+    "name": "Les Archives de Grandshelt",
+    "code": "ffbe-ladg",
+    "desc": "Revoir les scènes de l'histoire de FF Brave Exvius",
+    "link": "https://ffbe-ladg.menencia.com/story"
+  }
+]

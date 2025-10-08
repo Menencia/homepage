@@ -1,0 +1,10 @@
+/* You can add global styles to this file, and also import other style files */
+
+@use "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css?family=Averia+Sans+Libre&display=swap');
+
+body {
+  font-family: 'Averia Sans Libre', cursive;
+  color: #444;
+}
