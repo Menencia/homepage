@@ -12,24 +12,25 @@
         <div class="flex justify-center gap-3">
           <button
             class="cursor-pointer"
-            [class.underline]="isTheme(Theme.Browser)"
+            [class.text-blue-500]="isTheme(Theme.Browser)"
+            [class]="{ 'dark:text-orange-500': isTheme(Theme.Browser) }"
             (click)="toggleDark(Theme.Browser)"
           >
-            Browser
+            <fa-icon [icon]="faComputer" />
           </button>
           <button
             class="cursor-pointer"
-            [class.underline]="isTheme(Theme.Light)"
+            [class.text-blue-500]="isTheme(Theme.Light)"
             (click)="toggleDark(Theme.Light)"
           >
-            Light
+            <fa-icon [icon]="faSun" />
           </button>
           <button
             class="cursor-pointer"
-            [class.underline]="isTheme(Theme.Dark)"
+            [class.text-orange-500]="isTheme(Theme.Dark)"
             (click)="toggleDark(Theme.Dark)"
           >
-            Dark
+            <fa-icon [icon]="faMoon" />
           </button>
         </div>
       </div>
