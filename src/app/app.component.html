@@ -1,17 +1,42 @@
-<div class="px-5 mt-5">
-  <div class="flex flex-col sm:flex-row">
-    <div class="sm:w-1/3 text-center">
-      <h1 class="text-4xl">
-        <span class="text-blue-500">Menencia</span>'s homepage
-      </h1>
+<div class="h-screen dark:bg-gray-800">
+  <div class="px-5 pt-5">
+    <div
+      class="flex flex-col sm:divide-x divide-gray-200 dark:divide-gray-700 sm:flex-row"
+    >
+      <div class="flex flex-col sm:w-1/3 text-center">
+        <h1 class="text-4xl">
+          <span class="text-blue-500 dark:text-orange-500">Menencia</span>'s
+          homepage
+        </h1>
+        <div class="grow"></div>
+        <div class="flex justify-center gap-3">
+          <button
+            class="cursor-pointer"
+            [class.underline]="isTheme(Theme.Browser)"
+            (click)="toggleDark(Theme.Browser)"
+          >
+            Browser
+          </button>
+          <button
+            class="cursor-pointer"
+            [class.underline]="isTheme(Theme.Light)"
+            (click)="toggleDark(Theme.Light)"
+          >
+            Light
+          </button>
+          <button
+            class="cursor-pointer"
+            [class.underline]="isTheme(Theme.Dark)"
+            (click)="toggleDark(Theme.Dark)"
+          >
+            Dark
+          </button>
+        </div>
+      </div>
 
-      <img class="text-center hidden sm:inline" src="assets/bg.jpg" />
+      <div class="sm:w-2/3 pl-7">
+        <router-outlet></router-outlet>
+      </div>
     </div>
-
-    <div class="sm:w-2/3 sm:border-l-1 border-gray-200 pl-7">
-      <router-outlet></router-outlet>
-    </div>
-
-    <img class="text-center inline sm:hidden" src="assets/bg.jpg" />
   </div>
 </div>

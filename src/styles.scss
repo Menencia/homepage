@@ -2,6 +2,8 @@
 
 @use "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @import url('https://fonts.googleapis.com/css?family=Averia+Sans+Libre&display=swap');
 
 body {
