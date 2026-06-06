@@ -19,11 +19,9 @@ export class ProjectsComponent implements OnInit {
   }
 
   public loadProjects(): void {
-    this.http
-      .get<Project[]>('/assets/data/projects.json')
-      .subscribe((projects) => {
-        this.projects.set(projects);
-      });
+    this.http.get<Project[]>('data/projects.json').subscribe((projects) => {
+      this.projects.set(projects);
+    });
   }
 
   public openLink(project: Project): void {
