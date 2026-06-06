@@ -1,7 +1,7 @@
 <div>
-  @if (projects) {
+  @if (projects()) {
     <ul class="m-0 divide-y divide-gray-200 dark:divide-gray-700">
-      @for (project of projects; track project) {
+      @for (project of projects(); track project) {
         <li
           class="cursor-pointer py-3 hover:bg-gray-100 dark:hover:bg-gray-700"
           (click)="openLink(project)"

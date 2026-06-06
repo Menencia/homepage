@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { Project } from '../../shared/models/project';
 
 @Component({
@@ -9,12 +9,10 @@ import { Project } from '../../shared/models/project';
   templateUrl: './projects.component.html',
 })
 export class ProjectsComponent implements OnInit {
-  public projects: Project[];
+  public projects = signal<Project[]>([]);
   public updated = new Date('2025/10/09');
 
-  constructor(private http: HttpClient) {
-    this.projects = [];
-  }
+  constructor(private http: HttpClient) {}
 
   public ngOnInit(): void {
     this.loadProjects();
@@ -24,7 +22,7 @@ export class ProjectsComponent implements OnInit {
     this.http
       .get<Project[]>('/assets/data/projects.json')
       .subscribe((projects) => {
-        this.projects = projects;
+        this.projects.set(projects);
       });
   }
 

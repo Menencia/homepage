@@ -1,9 +1,6 @@
 import { Component, DOCUMENT, Inject, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faComputer, faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
-
 export enum Theme {
   Browser = 'Browser',
   Light = 'light',
@@ -12,16 +9,16 @@ export enum Theme {
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, FontAwesomeModule],
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
 })
 export class AppComponent implements OnInit {
   theme = Theme.Browser;
   dark = false;
 
-  faComputer = faComputer;
-  faSun = faSun;
-  faMoon = faMoon;
+  // faComputer = faComputer;
+  // faSun = faSun;
+  // faMoon = faMoon;
 
   Theme = Theme;
 
