@@ -12,25 +12,17 @@
         <div class="flex justify-center gap-3">
           <button
             class="cursor-pointer"
-            [class.text-blue-500]="isTheme(Theme.Browser)"
-            [class]="{ 'dark:text-orange-500': isTheme(Theme.Browser) }"
-            (click)="toggleDark(Theme.Browser)"
+            [class.text-blue-500]="!isDarkTheme()"
+            (click)="setLightTheme()"
           >
-            <!-- <fa-icon [icon]="faComputer" /> -->
+            <svg lucideSun></svg>
           </button>
           <button
             class="cursor-pointer"
-            [class.text-blue-500]="isTheme(Theme.Light)"
-            (click)="toggleDark(Theme.Light)"
+            [class.text-orange-500]="isDarkTheme()"
+            (click)="setDarkTheme()"
           >
-            <!-- <fa-icon [icon]="faSun" /> -->
-          </button>
-          <button
-            class="cursor-pointer"
-            [class.text-orange-500]="isTheme(Theme.Dark)"
-            (click)="toggleDark(Theme.Dark)"
-          >
-            <!-- <fa-icon [icon]="faMoon" /> -->
+            <svg lucideMoon></svg>
           </button>
         </div>
       </div>

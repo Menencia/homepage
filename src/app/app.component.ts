@@ -1,64 +1,51 @@
-import { Component, DOCUMENT, Inject, OnInit } from '@angular/core';
+import { Component, DOCUMENT, inject, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { LucideMoon, LucideSun } from '@lucide/angular';
 
 export enum Theme {
-  Browser = 'Browser',
   Light = 'light',
   Dark = 'dark',
 }
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, LucideMoon, LucideSun],
   templateUrl: './app.component.html',
 })
 export class AppComponent implements OnInit {
-  theme = Theme.Browser;
+  theme = Theme.Dark;
   dark = false;
 
-  // faComputer = faComputer;
-  // faSun = faSun;
-  // faMoon = faMoon;
-
-  Theme = Theme;
-
-  constructor(@Inject(DOCUMENT) private document: Document) {}
+  private document = inject(DOCUMENT);
 
   ngOnInit() {
     const theme = localStorage.getItem('theme');
     if (theme) {
       this.theme = theme as Theme;
     }
-    this.applyTheme();
+    this.applyTheme(this.theme);
   }
 
-  /** Toggles between light & dark themes */
-  toggleDark(theme: Theme) {
-    this.theme = theme;
-    this.applyTheme();
-    if (theme === Theme.Browser) {
-      localStorage.removeItem('theme');
-    } else {
-      localStorage.setItem('theme', theme);
-    }
+  setLightTheme() {
+    this.applyTheme(Theme.Light);
   }
 
-  isTheme(theme: Theme) {
-    return this.theme === theme;
+  setDarkTheme() {
+    this.applyTheme(Theme.Dark);
+  }
+
+  isDarkTheme() {
+    return this.theme === Theme.Dark;
   }
 
   /** Applies specific theme */
-  private applyTheme() {
-    const browserHasDarkTheme = window.matchMedia(
-      '(prefers-color-scheme: dark)',
-    ).matches;
-    this.dark =
-      (this.theme === Theme.Browser && browserHasDarkTheme) ||
-      this.theme === Theme.Dark;
-    if (this.dark) {
+  private applyTheme(theme: Theme) {
+    this.theme = theme;
+    if (theme === Theme.Dark) {
       this.document.querySelector('html')?.classList.add('dark');
     } else {
       this.document.querySelector('html')?.classList.remove('dark');
     }
+    localStorage.setItem('theme', this.theme);
   }
 }
