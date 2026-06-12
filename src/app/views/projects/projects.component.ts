@@ -9,22 +9,23 @@ import { Project } from '../../shared/models/project';
   templateUrl: './projects.component.html',
 })
 export class ProjectsComponent implements OnInit {
-  public projects = signal<Project[]>([]);
-  public updated = new Date('2025/10/09');
+  projects = signal<Project[]>([]);
+
+  readonly updated = new Date('2025/10/09');
 
   constructor(private http: HttpClient) {}
 
-  public ngOnInit(): void {
+  ngOnInit() {
     this.loadProjects();
   }
 
-  public loadProjects(): void {
+  loadProjects() {
     this.http.get<Project[]>('data/projects.json').subscribe((projects) => {
       this.projects.set(projects);
     });
   }
 
-  public openLink(project: Project): void {
+  openLink(project: Project) {
     window.open(project.link);
   }
 }
